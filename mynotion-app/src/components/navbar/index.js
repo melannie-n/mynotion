@@ -7,11 +7,11 @@ return (
 	<>
 	<Nav>
 		<NavMenu>
-		<NavLink to="/home" activeStyle>
-			Home Page
+		<NavLink to="/connect" activeStyle>
+			Connect Page
 		</NavLink>
 		<NavLink to="/study" activeStyle>
-			Link Page
+			Study Page
 		</NavLink>
 		</NavMenu>
 	</Nav>

@@ -5,6 +5,7 @@ const Land = () => {
     <div>
       <h1>
         landing page
+        insert information about site
       </h1>
     </div>
   );
