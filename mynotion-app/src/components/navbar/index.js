@@ -11,7 +11,7 @@ return (
 			Home Page
 		</NavLink>
 		<NavLink to="/study" activeStyle>
-			Link  Page
+			Link Page
 		</NavLink>
 		</NavMenu>
 	</Nav>

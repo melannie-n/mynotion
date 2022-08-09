@@ -1,13 +1,13 @@
 import React from "react";
   
-const Land = () => {
+const Home = () => {
   return (
     <div>
       <h1>
-        landing page
+        home page
       </h1>
     </div>
   );
 };
   
-export default Land;
+export default Home;
