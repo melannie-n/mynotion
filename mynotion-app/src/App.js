@@ -14,7 +14,7 @@ return (
 	<Navbar />
 	<Routes>
 		{/* @TODO: Make logo button for landing page */}
-		<Route exact path='/' exact element={<Land />} />
+		<Route exact path='/' element={<Land />} />
 		<Route path='/connect' element ={<Connect />} />
 		<Route path='/study' element={<Study/>} />
 	</Routes>
