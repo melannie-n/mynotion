@@ -45,6 +45,28 @@ def get_events():
     for event in events:
         event_list.append(format_event(event))
     return {'events': event_list}
-   
+
+#get one event
+@app.route('/events/<id>', methods = ['GET'])
+def get_one_event(id):
+    event = Event.query.filter_by(id = id).one()
+    return {'event': format_event(event)}
+
+#delete an event
+@app.route('/events/<id>', methods = ['DELETE'])
+def delete_event(id):
+    event = Event.query.filter_by(id=id).one()
+    db.session.delete(event)
+    db.session.commit()
+    return 'Event deleted.'
+
+@app.route('/events/<id>', methods = ['PUT'])
+def update_event(id):
+    event = Event.query.filter_by(id=id)
+    description = request.json['description']
+    event.update(dict(description = description, created_at = datetime.utcnow()))
+    db.session.commit()
+    return {'event': format_event(event.one())}  
+ 
 if __name__ == '__main__':
     app.run()
