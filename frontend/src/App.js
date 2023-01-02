@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import {format} from "date-fns";
+//import { getPageText } from './editNotion';
+
 
 import './App.css';
 
@@ -40,7 +42,11 @@ function App() {
     setEventId(event.id);
     setEditDescription(event.description);
   }
-
+  // const getText= async()=>{
+  //   var text = await getPageText();
+  //   const {events} = text;
+  //   //setEventsList(events);
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {    
