@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {FlashcardArray} from "react-quizlet-flashcard";
 
 // Copy the payload shape interface from our server
 // We want to copy (rather than import) since we we won't necessarily deploy our
@@ -29,20 +30,13 @@ function App() {
       >
         Fetch List
       </button>
-
-      {/* Map the resulting object array into an ordered HTML list with anchor links */}
-      {/* Using index as key is harmless since we will only ever be replacing the full list */}
-      <ol>
-        {thingsToLearn.map((thing, idx) => {
+        <FlashcardArray cards = {thingsToLearn.map((thing, idx) => {
           return (
-            <li key={idx}>
-              <a href={thing.url} target="_blank" rel="noopener noreferrer">
-                {thing.label}
-              </a>
-            </li>
+            {id: idx,
+            frontHTML:thing.label,
+            backHTML: thing.url}
           );
-        })}
-      </ol>
+        })}/>
     </div>
   );
 }
