@@ -16,8 +16,8 @@ export function Study() {
 
   return (
     <div>
-      <h1>My Data</h1>
-      <button
+      <div style={{textAlign: "center"}}>
+      <button className = "button-17"
         type="button"
         onClick={() => {
           fetch("http://localhost:8000/")
@@ -30,13 +30,26 @@ export function Study() {
       >
         Fetch List
       </button>
-        <FlashcardArray cards = {thingsToLearn.map((thing, idx) => {
+      </div>
+      <div className = "cardBlock">
+        <FlashcardArray 
+        frontContentStyle={{
+          backgroundColor: "black",
+          alignContent: "center"
+        }}
+        backContentStyle={{
+          backgroundColor: "black",
+          alignContent: "center"
+        }}
+        cards = {thingsToLearn.map((thing, idx) => {
           return (
             {id: idx,
-            frontHTML:thing.label,
-            backHTML: thing.url}
+            frontHTML:<p className = "cardText">{thing.label}</p>,
+            backHTML: <p className = "cardText">{thing.url}</p>
+            }
           );
         })}/>
+        </div>
     </div>
   );
 }
